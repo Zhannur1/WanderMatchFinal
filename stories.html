@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" data-bs-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WanderMatch | Travel Stories</title>
+    <script src="js/theme.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<a class="skip-link" href="#mainContent">Skip to main content</a>
+<header class="site-header">
+    <div class="site-navbar">
+        <a href="index.html" class="site-logo">WanderMatch</a>
+        <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="mainNav" aria-label="Open navigation menu">☰</button>
+        <nav class="site-links" id="mainNav" aria-label="Main navigation">
+            <a href="index.html">Home</a> <a href="stories.html" class="active" aria-current="page">Travel Stories</a> <a href="match.html">Your Story</a> <a href="contact.html">Find Your Match</a>
+            <a href="index.html#savedTrips" class="saved-nav-link">Saved <span class="saved-count" aria-label="0 saved destinations">0</span></a>
+        </nav>
+        <button type="button" class="theme-toggle" aria-pressed="false" aria-label="Switch to dark mode">☾ Dark mode</button>
+    </div>
+    <p class="tagline">Don't choose a destination. Discover your match.</p>
+</header>
+<main id="mainContent">
+    <section>
+        <p class="small-title">TRAVEL STORIES</p>
+        <h1>Places to inspire your next trip.</h1>
+        <p>Search, filter, sort and save destinations created dynamically from a JavaScript array.</p>
+    </section>
+
+    <section class="explore-tools" aria-labelledby="exploreToolsTitle">
+        <div>
+            <h2 id="exploreToolsTitle">Explore destinations</h2>
+            <p id="resultCount" aria-live="polite">0 destinations</p>
+        </div>
+        <div class="tool-grid">
+            <div>
+                <label for="destinationSearch">Search</label>
+                <input class="form-control" type="search" id="destinationSearch" placeholder="Try Kyoto, culture or Europe" aria-describedby="searchHelp">
+            </div>
+            <div>
+                <label for="styleFilter">Travel style</label>
+                <select class="form-select" id="styleFilter">
+                    <option value="all">All styles</option>
+                    <option value="relaxation">Relaxation</option>
+                    <option value="adventure">Adventure</option>
+                    <option value="culture">Culture</option>
+                    <option value="city">City life</option>
+                </select>
+            </div>
+            <div>
+                <label for="sortDestinations">Sort</label>
+                <select class="form-select" id="sortDestinations">
+                    <option value="default">Original order</option>
+                    <option value="rating">Highest rating</option>
+                    <option value="cost-low">Lowest daily cost</option>
+                    <option value="cost-high">Highest daily cost</option>
+                </select>
+            </div>
+        </div>
+    </section>
+
+    <p id="savedActionStatus" class="success-message temporary-message" role="status"></p>
+    <p id="emptyState" class="empty-state temporary-message" role="status" hidden>Nothing found. Try another search or filter.</p>
+    <section class="stories" id="destinationGrid" aria-live="polite" aria-label="Destination results"></section>
+</main>
+<footer>
+    <p>&copy; 2026 WanderMatch. Created by Zhannur Maratova.</p>
+    <p class="footer-tools">Built with Bootstrap 5.3.8, jQuery 3.7.1</p>
+    <details class="credits-details">
+        <summary>Photo and project credits</summary>
+        <div class="credits-content">
+            <p>Travel photography from Pexels. Individual photographers:</p>
+            <ul>
+                <li><a href="https://www.pexels.com/ru-ru/photo/36958094/" target="_blank" rel="noopener">Tokyo — Ignacio Estevo</a></li>
+                <li><a href="https://www.pexels.com/ru-ru/photo/27429861/" target="_blank" rel="noopener">Madeira — Ryan Klaus</a></li>
+                <li><a href="https://www.pexels.com/ru-ru/photo/19137460/" target="_blank" rel="noopener">Bali — Joe Fikar</a></li>
+                <li><a href="https://www.pexels.com/ru-ru/photo/31585491/" target="_blank" rel="noopener">Banff — Hunter Schroeder</a></li>
+                <li><a href="https://www.pexels.com/ru-ru/photo/33053355/" target="_blank" rel="noopener">Barcelona — Regan Dsouza</a></li>
+                <li><a href="https://www.pexels.com/photo/13818274/" target="_blank" rel="noopener">Interlaken — Paintalia</a></li>
+                <li><a href="https://www.pexels.com/photo/31252768/" target="_blank" rel="noopener">Kyoto — Daniele Ursino</a></li>
+                <li><a href="https://www.pexels.com/photo/27203832/" target="_blank" rel="noopener">New York — Ekam Juneja</a></li>
+                <li><a href="https://www.pexels.com/photo/33981213/" target="_blank" rel="noopener">Queenstown — Mickoh Ramos</a></li>
+                <li><a href="https://www.pexels.com/photo/7403883/" target="_blank" rel="noopener">Reykjavik — Pavel Danilyuk</a></li>
+                <li><a href="https://www.pexels.com/photo/36805852/" target="_blank" rel="noopener">Rome — Claudia Solano</a></li>
+                <li><a href="https://www.pexels.com/photo/12766014/" target="_blank" rel="noopener">Santorini — Giannis Osep</a></li>
+            </ul>
+        </div>
+    </details>
+</footer>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/data.js"></script>
+<script src="js/saved.js"></script>
+<script src="js/common.js"></script>
+<script src="js/stories.js"></script>
+</body>
+</html>

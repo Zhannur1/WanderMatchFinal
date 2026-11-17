@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" data-bs-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WanderMatch | Find Your Match</title>
+    <script src="js/theme.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<a class="skip-link" href="#mainContent">Skip to main content</a>
+<header class="site-header">
+    <div class="site-navbar">
+        <a href="index.html" class="site-logo">WanderMatch</a>
+        <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="mainNav" aria-label="Open navigation menu">☰</button>
+        <nav class="site-links" id="mainNav" aria-label="Main navigation">
+            <a href="index.html">Home</a> <a href="stories.html">Travel Stories</a> <a href="match.html">Your Story</a> <a href="contact.html" class="active" aria-current="page">Find Your Match</a>
+            <a href="index.html#savedTrips" class="saved-nav-link">Saved <span class="saved-count" aria-label="0 saved destinations">0</span></a>
+        </nav>
+        <button type="button" class="theme-toggle" aria-pressed="false" aria-label="Switch to dark mode">☾ Dark mode</button>
+    </div>
+    <p class="tagline">Don't choose a destination. Discover your match.</p>
+</header>
+<main id="mainContent">
+    <section class="survey-hero container-fluid px-0">
+        <div class="row align-items-center g-4">
+            <div class="col-12 col-lg-6">
+                <img src="images/story-madeira.jpg" class="img-fluid rounded-3" alt="Mountain coastline and ocean in Madeira, Portugal">
+            </div>
+            <div class="col-12 col-lg-6">
+                <p class="small-title">PERSONAL TRAVEL MATCHING</p>
+                <h1>Find a place that feels like you.</h1>
+                <p>Answer a few questions and WanderMatch will calculate your top three destination matches.</p>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>Tell Us About Your Trip</h2>
+        <p>Fields marked with * are required. Rules are shown before you type. If a field is invalid, it turns red and explains exactly what to fix after you leave it.</p>
+
+        <form id="matchForm" class="match-form" novalidate>
+            <fieldset>
+                <legend>About You</legend>
+                <div class="row g-3">
+                    <div class="col-md-6">
+                        <label class="form-label" for="full-name">Full Name *</label>
+                        <input class="form-control validate-on-blur" type="text" id="full-name" autocomplete="name" minlength="5" maxlength="60" required aria-describedby="full-nameHelp full-nameError">
+                        <div id="full-nameError" class="field-error" role="alert"></div>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label" for="email">Email *</label>
+                        <input class="form-control validate-on-blur" type="email" id="email" autocomplete="email" maxlength="100" required aria-describedby="emailHelp emailError">
+                        <div id="emailError" class="field-error" role="alert"></div>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label" for="phone">Phone *</label>
+                        <input class="form-control validate-on-blur" type="tel" id="phone" autocomplete="tel" maxlength="24" placeholder="+7 777 123 45 67" required aria-describedby="phoneHelp phoneError">
+                        <div id="phoneError" class="field-error" role="alert"></div>
+                    </div>
+                    <div class="col-md-3">
+                        <label class="form-label" for="budget">Total budget (USD) *</label>
+                        <input class="form-control validate-on-blur" type="number" id="budget" min="300" max="15000" step="1" placeholder="2000" required aria-describedby="budgetHelp budgetError">
+                        <div class="form-text" id="budgetHelp">from $300 to $15,000.</div>
+                        <div id="budgetError" class="field-error" role="alert"></div>
+                    </div>
+                    <div class="col-md-3">
+                        <label class="form-label" for="trip-days">Trip length *</label>
+                        <input class="form-control validate-on-blur" type="number" id="trip-days" min="2" max="30" step="1" placeholder="7" required aria-describedby="trip-daysHelp trip-daysError">
+                        <div class="form-text" id="trip-daysHelp">from 2 to 30 days.</div>
+                        <div id="trip-daysError" class="field-error" role="alert"></div>
+                    </div>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Travel Style *</legend>
+                <p class="form-text" id="styleHelp">Choose exactly one travel style.</p>
+                <div class="choice-grid" id="styleChoices" aria-describedby="styleHelp styleError">
+                    <label class="choice-card"><input class="form-check-input" type="radio" name="travel-style" value="relaxation"> Relaxation</label>
+                    <label class="choice-card"><input class="form-check-input" type="radio" name="travel-style" value="adventure"> Adventure</label>
+                    <label class="choice-card"><input class="form-check-input" type="radio" name="travel-style" value="culture"> Culture</label>
+                    <label class="choice-card"><input class="form-check-input" type="radio" name="travel-style" value="city"> City Life</label>
+                </div>
+                <div id="styleError" class="field-error" role="alert"></div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Interests *</legend>
+                <p class="form-text" id="interestsHelp">Choose 1–3 interests.</p>
+                <div class="choice-grid" id="interestChoices" aria-describedby="interestsHelp interestsError">
+                    <label class="choice-card"><input class="form-check-input" type="checkbox" name="interests" value="nature"> Nature</label>
+                    <label class="choice-card"><input class="form-check-input" type="checkbox" name="interests" value="food"> Food</label>
+                    <label class="choice-card"><input class="form-check-input" type="checkbox" name="interests" value="history"> History</label>
+                    <label class="choice-card"><input class="form-check-input" type="checkbox" name="interests" value="beaches"> Beaches</label>
+                    <label class="choice-card"><input class="form-check-input" type="checkbox" name="interests" value="culture"> Culture</label>
+                </div>
+                <div id="interestsError" class="field-error" role="alert"></div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Your Dream Trip</legend>
+                <label class="form-label" for="dream-trip">Describe your ideal trip *</label>
+                <textarea class="form-control validate-on-blur" id="dream-trip" rows="5" minlength="20" maxlength="300" placeholder="For example: I want a week with local food, scenic walks and a few cultural activities." required aria-describedby="dream-tripHelp dream-tripError"></textarea>
+                <div class="form-help-row"><div class="form-text" id="dream-tripHelp">20–300 characters.</div><div id="dreamTripCount" class="character-count" aria-live="polite">0 / 300</div></div>
+                <div id="dream-tripError" class="field-error" role="alert"></div>
+            </fieldset>
+
+            <button class="main-form-button" type="submit">Find My Match</button>
+            <p id="formSuccess" class="success-message temporary-message" role="status"></p>
+        </form>
+    </section>
+
+    <section id="matchResults" class="match-results" hidden aria-labelledby="matchResultsTitle">
+        <p class="small-title">YOUR RESULTS</p>
+        <h2 id="matchResultsTitle">Your top destination matches</h2>
+        <p id="savedActionStatus" class="success-message temporary-message" role="status"></p>
+        <div id="matchResultList" class="match-result-list" aria-live="polite"></div>
+    </section>
+</main>
+<footer>
+    <p>&copy; 2026 WanderMatch. Created by Zhannur Maratova.</p>
+    <p class="footer-tools">Built with Bootstrap 5.3.8, jQuery 3.7.1</p>
+    <details class="credits-details">
+        <summary>Photo and project credits</summary>
+        <div class="credits-content">
+            <p>Travel photography from Pexels. Individual photographers:</p>
+            <ul>
+                <li><a href="https://www.pexels.com/ru-ru/photo/36958094/" target="_blank" rel="noopener">Tokyo — Ignacio Estevo</a></li>
+                <li><a href="https://www.pexels.com/ru-ru/photo/27429861/" target="_blank" rel="noopener">Madeira — Ryan Klaus</a></li>
+                <li><a href="https://www.pexels.com/ru-ru/photo/19137460/" target="_blank" rel="noopener">Bali — Joe Fikar</a></li>
+                <li><a href="https://www.pexels.com/ru-ru/photo/31585491/" target="_blank" rel="noopener">Banff — Hunter Schroeder</a></li>
+                <li><a href="https://www.pexels.com/ru-ru/photo/33053355/" target="_blank" rel="noopener">Barcelona — Regan Dsouza</a></li>
+                <li><a href="https://www.pexels.com/photo/13818274/" target="_blank" rel="noopener">Interlaken — Paintalia</a></li>
+                <li><a href="https://www.pexels.com/photo/31252768/" target="_blank" rel="noopener">Kyoto — Daniele Ursino</a></li>
+                <li><a href="https://www.pexels.com/photo/27203832/" target="_blank" rel="noopener">New York — Ekam Juneja</a></li>
+                <li><a href="https://www.pexels.com/photo/33981213/" target="_blank" rel="noopener">Queenstown — Mickoh Ramos</a></li>
+                <li><a href="https://www.pexels.com/photo/7403883/" target="_blank" rel="noopener">Reykjavik — Pavel Danilyuk</a></li>
+                <li><a href="https://www.pexels.com/photo/36805852/" target="_blank" rel="noopener">Rome — Claudia Solano</a></li>
+                <li><a href="https://www.pexels.com/photo/12766014/" target="_blank" rel="noopener">Santorini — Giannis Osep</a></li>
+            </ul>
+        </div>
+    </details>
+</footer>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/data.js"></script>
+<script src="js/saved.js"></script>
+<script src="js/common.js"></script>
+<script src="js/matcher.js"></script>
+</body>
+</html>

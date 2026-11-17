@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" data-bs-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WanderMatch | Home</title>
+    <script src="js/theme.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<a class="skip-link" href="#mainContent">Skip to main content</a>
+<header class="site-header">
+    <div class="site-navbar">
+        <a href="index.html" class="site-logo">WanderMatch</a>
+        <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="mainNav" aria-label="Open navigation menu">☰</button>
+        <nav class="site-links" id="mainNav" aria-label="Main navigation">
+            <a href="index.html" class="active" aria-current="page">Home</a> <a href="stories.html">Travel Stories</a> <a href="match.html">Your Story</a> <a href="contact.html">Find Your Match</a>
+            <a href="#savedTrips" class="saved-nav-link">Saved <span class="saved-count" aria-label="0 saved destinations">0</span></a>
+        </nav>
+        <button type="button" class="theme-toggle" aria-pressed="false" aria-label="Switch to dark mode">☾ Dark mode</button>
+    </div>
+    <p class="tagline">Don't choose a destination. Discover your match.</p>
+</header>
+<main id="mainContent">
+    <section class="home-hero">
+        <div class="hero-text">
+            <p class="small-title">PERSONAL TRAVEL MATCHING</p>
+            <h1>Find a place that feels like you.</h1>
+            <p>WanderMatch helps you discover destinations based on your interests, travel style, budget and the kind of experience you want.</p>
+            <a href="contact.html" class="main-button">Find Your Match</a>
+        </div>
+        <div class="hero-image">
+            <img src="images/story-madeira.jpg" alt="Mountain coastline in Madeira, Portugal">
+        </div>
+    </section>
+
+    <section>
+        <h2>How WanderMatch Works</h2>
+        <p>Three simple steps help you move from preferences to destination ideas.</p>
+        <div class="steps">
+            <article class="step-card"><span>1</span><h3>Choose</h3><p>Tell us what kind of trip you enjoy.</p></article>
+            <article class="step-card"><span>2</span><h3>Match</h3><p>See places that fit your travel vibe and budget.</p></article>
+            <article class="step-card"><span>3</span><h3>Plan</h3><p>Compare ideas, save favorites and start planning your trip.</p></article>
+        </div>
+    </section>
+
+    <section id="savedTrips" class="saved-trips-section" aria-labelledby="savedTripsTitle">
+        <div class="section-heading-row">
+            <div>
+                <p class="small-title">SAVED TRIPS</p>
+                <h2 id="savedTripsTitle">Your saved destinations</h2>
+                <p id="savedTripsSummary" aria-live="polite">0 saved destinations</p>
+            </div>
+            <button type="button" id="clearSavedTrips" class="secondary-action-button" hidden>Clear all</button>
+        </div>
+        <p id="savedTripsEmpty" class="empty-state">No saved destinations yet. Open Travel Stories and choose “Save trip”.</p>
+        <p id="savedActionStatus" class="success-message temporary-message" role="status"></p>
+        <div id="savedTripsList" class="saved-trips-list" aria-live="polite"></div>
+        <a href="stories.html" class="text-link">Browse Travel Stories</a>
+    </section>
+
+    <section>
+        <h2>Frequently Asked Questions</h2>
+        <div class="accordion" id="faq">
+            <div class="accordion-item">
+                <h3 class="accordion-header"><button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1" aria-expanded="true" aria-controls="faq1">How does WanderMatch work?</button></h3>
+                <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faq"><div class="accordion-body">You choose your preferences and WanderMatch scores destinations against them.</div></div>
+            </div>
+            <div class="accordion-item">
+                <h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2" aria-expanded="false" aria-controls="faq2">Can I search destinations first?</button></h3>
+                <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faq"><div class="accordion-body">Yes. Travel Stories includes live search, travel-style filtering and sorting.</div></div>
+            </div>
+            <div class="accordion-item">
+                <h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3" aria-expanded="false" aria-controls="faq3">Can I save travel information?</button></h3>
+                <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faq"><div class="accordion-body">Yes. Saved trips and personal memories are stored in localStorage and remain after a reload in this browser.</div></div>
+            </div>
+        </div>
+    </section>
+</main>
+<footer>
+    <p>&copy; 2026 WanderMatch. Created by Zhannur Maratova.</p>
+    <p class="footer-tools">Built with Bootstrap 5.3.8, jQuery 3.7.1</p>
+    <details class="credits-details">
+        <summary>Photo and project credits</summary>
+        <div class="credits-content">
+            <p>Travel photography from Pexels. Individual photographers:</p>
+            <ul>
+                <li><a href="https://www.pexels.com/ru-ru/photo/36958094/" target="_blank" rel="noopener">Tokyo — Ignacio Estevo</a></li>
+                <li><a href="https://www.pexels.com/ru-ru/photo/27429861/" target="_blank" rel="noopener">Madeira — Ryan Klaus</a></li>
+                <li><a href="https://www.pexels.com/ru-ru/photo/19137460/" target="_blank" rel="noopener">Bali — Joe Fikar</a></li>
+                <li><a href="https://www.pexels.com/ru-ru/photo/31585491/" target="_blank" rel="noopener">Banff — Hunter Schroeder</a></li>
+                <li><a href="https://www.pexels.com/ru-ru/photo/33053355/" target="_blank" rel="noopener">Barcelona — Regan Dsouza</a></li>
+                <li><a href="https://www.pexels.com/photo/13818274/" target="_blank" rel="noopener">Interlaken — Paintalia</a></li>
+                <li><a href="https://www.pexels.com/photo/31252768/" target="_blank" rel="noopener">Kyoto — Daniele Ursino</a></li>
+                <li><a href="https://www.pexels.com/photo/27203832/" target="_blank" rel="noopener">New York — Ekam Juneja</a></li>
+                <li><a href="https://www.pexels.com/photo/33981213/" target="_blank" rel="noopener">Queenstown — Mickoh Ramos</a></li>
+                <li><a href="https://www.pexels.com/photo/7403883/" target="_blank" rel="noopener">Reykjavik — Pavel Danilyuk</a></li>
+                <li><a href="https://www.pexels.com/photo/36805852/" target="_blank" rel="noopener">Rome — Claudia Solano</a></li>
+                <li><a href="https://www.pexels.com/photo/12766014/" target="_blank" rel="noopener">Santorini — Giannis Osep</a></li>
+            </ul>
+    </details>
+</footer>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/data.js"></script>
+<script src="js/saved.js"></script>
+<script src="js/common.js"></script>
+</body>
+</html>
